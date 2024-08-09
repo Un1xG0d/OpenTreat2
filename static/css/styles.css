@@ -1,0 +1,40 @@
+html {
+	overflow: hidden;
+	height: 100vh;
+	width: 100vw;	
+}
+
+body {
+	overflow: hidden;
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.video_feed {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.treat_button_container {
+	width: 100%;
+	height: 80px;
+	background-color: #000000;
+	opacity: 75%;
+	position: absolute;
+	bottom: 0;
+}
+
+.treat_button {
+	width: 60px;
+	height: 100%;
+	padding: 10px;
+	display: inline-block;
+    vertical-align: middle;
+}

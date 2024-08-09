@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
+    <title>OpenTreat</title>
+  </head>
+  <body>
+    <img class="video_feed" src="{{ url_for('video_feed') }}">
+    <div class="treat_button_container">
+      <center>
+        <a href="/drop_treat">
+          <img class="treat_button" src="{{ url_for('static',filename='images/drop_treat.png') }}">
+        </a>
+      </center>
+      </a>
+    </div>
+  </body>
+</html>
