@@ -3,7 +3,9 @@
 </h1>
 <br>
 
-OpenTreat allows a user to view and interact with their pets while not at home. Watch a live video stream of your pets from your smartphone or laptop, and remotely dispense treats with the push of a button.
+OpenTreat allows you to view and interact with your pets while not at home. 
+
+Watch a live video stream of your pet from your smartphone or laptop, and remotely dispense treats with the push of a button.
 
 This a complete rewrite of my original OpenTreat project found [here](https://github.com/Un1xG0d/OpenTreat).
 
