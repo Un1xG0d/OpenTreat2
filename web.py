@@ -1,8 +1,14 @@
-from webcam import VideoCamera
+import os
+from dotenv import load_dotenv
 from flask import Flask, jsonify, render_template, Response
+from flask_basicauth import BasicAuth
+from webcam import VideoCamera
 
+load_dotenv()
 app = Flask(__name__)
-
+app.config['BASIC_AUTH_USERNAME'] = os.getenv("USERNAME")
+app.config['BASIC_AUTH_PASSWORD'] = os.getenv("PASSWORD")
+basic_auth = BasicAuth(app)
 video_stream = VideoCamera()
 
 def gen(camera):
@@ -12,6 +18,7 @@ def gen(camera):
 			   b"Content-Type: image/jpeg\r\n\r\n" + frame + b"\r\n\r\n")
 
 @app.route("/")
+@basic_auth.required
 def index():
 	return render_template("index.html")
 

@@ -8,7 +8,7 @@ OpenTreat allows a user to view and interact with their pets while not at home. 
 This a complete rewrite of my original OpenTreat project found [here](https://github.com/Un1xG0d/OpenTreat).
 
 ## Overview
-The treat dispenser system is built using a Raspberry Pi and 3D printed parts. When a user presses the button on the webapp, it turns the servo motor for a certain number of seconds. This spins the middle piece and dispenses a section of treats into the bowl below.
+The treat dispenser system is built using a Raspberry Pi and 3D printed parts. When a user presses the button on the web app, it turns the servo motor for a certain number of seconds. This spins the middle piece and dispenses a section of treats into the bowl below.
 
 ## Parts needed
 * Raspberry Pi
@@ -39,14 +39,25 @@ pip3 install -r requirements.txt
 ```
 
 ## Automatic startup
-Create a cronjob with `crontab -e` to automatically start the webapp on boot.
+Create a cronjob with `crontab -e` to automatically start the web app on boot.
 
 ```
 @reboot python3 /home/admin/OpenTreat/web.py
 ```
 
+## Set up username and password
+The web app uses HTTP Basic Auth to secure the video feed.
+
+Create a `.env` file in the root directory and update the values accordingly:
+```
+USERNAME=test
+PASSWORD=test
+```
+
+This will be your username & password to login to the web app.
+
 ## Port forward the app
-Make sure to change your router settings to allow a port forward of port 3000 to your Raspberry Pi. This is what makes the webapp accessible to the internet.
+Make sure to change your router settings to allow a port forward of port 3000 to your Raspberry Pi. This is what makes the web app accessible to the internet.
 
 ## View the video stream
 On your smartphone or laptop, browse to your router's external IP on port 3000 to view the video stream of your pets. 
