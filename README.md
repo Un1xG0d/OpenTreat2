@@ -1,7 +1,6 @@
 <h1 align="center">
   <img src="https://github.com/Un1xG0d/OpenTreat2/blob/master/README/Icon-full.png">
 </h1>
-<br>
 
 OpenTreat allows you to view and interact with your pets while not at home. 
 
