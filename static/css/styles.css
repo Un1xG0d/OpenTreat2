@@ -1,7 +1,7 @@
 html {
 	overflow: hidden;
-	height: 100vh;
-	width: 100vw;	
+	height: 100%;
+	width: 100%;	
 }
 
 body {
@@ -20,6 +20,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
 }
 
 .treat_button_container {
