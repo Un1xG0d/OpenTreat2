@@ -23,6 +23,7 @@ def index():
 	return render_template("index.html")
 
 @app.route("/video_feed")
+@basic_auth.required
 def video_feed():
 	return Response(gen(video_stream), mimetype="multipart/x-mixed-replace; boundary=frame")
 
