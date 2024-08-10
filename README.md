@@ -27,6 +27,7 @@ The treat dispenser system is built using a Raspberry Pi and 3D printed parts. W
 1. Image your Raspberry Pi with [Raspbian](https://www.raspberrypi.com/software/)
 2. Create a new user with the username `admin`
 3. Configure your WiFi network settings
+4. Enable OpenSSH
 
 ## Download the code
 ```
