@@ -41,10 +41,10 @@ pip3 install -r requirements.txt
 ```
 
 ## Automatic startup
-Create a cronjob with `crontab -e` to automatically start the web app on boot.
+Create a cronjob with `sudo crontab -e` to automatically set up and start the web app on boot.
 
 ```
-@reboot python3 /home/admin/OpenTreat/web.py
+@reboot /home/admin/OpenTreat/boot.sh
 ```
 
 ## Set up username and password
