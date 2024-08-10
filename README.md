@@ -40,13 +40,6 @@ cd ~/OpenTreat
 sudo pip3 install -r requirements.txt
 ```
 
-## Automatic startup
-Create a cronjob with `sudo crontab -e` to automatically set up and start the web app on boot.
-
-```
-@reboot /home/admin/OpenTreat/boot.sh
-```
-
 ## Set up username and password
 The web app uses HTTP Basic Auth to secure the video feed.
 
@@ -57,6 +50,13 @@ PASSWORD=test
 ```
 
 This will be your username & password to login to the web app.
+
+## Automatic startup
+Create a cronjob with `sudo crontab -e` to automatically set up and start the web app on boot.
+
+```
+@reboot /home/admin/OpenTreat/boot.sh
+```
 
 ## Port forward the app
 Make sure to change your router settings to allow a port forward of port 3000 to your Raspberry Pi. This is what makes the web app accessible to the internet.
