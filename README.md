@@ -13,8 +13,8 @@ The treat dispenser system is built using a Raspberry Pi and 3D printed parts. W
 
 ## Parts needed
 * Raspberry Pi
-* Raspberry Pi webcam
-* LS3006 servo (any 360* servo should work)
+* SG90 servo (any 360* servo motor should work)
+* USB webcam
 * 3D printer
 
 ## Physical assembly
@@ -35,7 +35,7 @@ git clone https://github.com/Un1xG0d/OpenTreat2.git ~/OpenTreat
 cd ~/OpenTreat
 ```
 
-## Install Python dependencies
+## Install dependencies
 ```
 sudo pip3 install -r requirements.txt
 ```
