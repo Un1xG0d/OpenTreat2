@@ -67,7 +67,7 @@ Press the bone button to drop treats into your pets' bowl.
 
 ## Resources
 ### Recommended print settings
-> Scale: 100%  
+> Scale: 80%  
 > Infill: 10%  
 > Layer Height: 0.2  
 > Speed: Standard  
