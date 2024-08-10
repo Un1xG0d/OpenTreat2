@@ -22,6 +22,7 @@ The treat dispenser system is built using a Raspberry Pi and 3D printed parts. W
 	1. The recommended print settings are in the Resources section below
 2. Assemble the parts using super glue
 3. Hook up the 3 servo wires to the Raspberry Pi’s GPIO pins
+  1. The proper pinout is in the Resources section below
 
 ## Device setup
 1. Image your Raspberry Pi with [Raspbian](https://www.raspberrypi.com/software/)
