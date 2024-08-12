@@ -35,13 +35,15 @@ def video_feed():
 @app.route("/drop_treat")
 @basic_auth.required
 def drop_treat():
-	pi.set_servo_pulsewidth(servo_pin, 1500) #stop
-	time.sleep(0.5)
-	pi.set_servo_pulsewidth(servo_pin, 1560) #spin
-	time.sleep(0.25)
-	pi.set_servo_pulsewidth(servo_pin, 1500) #stop
+	try:
+		pi.set_servo_pulsewidth(servo_pin, 1500) #stop
+		time.sleep(0.5)
+		pi.set_servo_pulsewidth(servo_pin, 1560) #spin
+		time.sleep(0.25)
+		pi.set_servo_pulsewidth(servo_pin, 1500) #stop
+	except Exception as e:
+		print(e)
 	return redirect("/")
-
 
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", port="3000")
