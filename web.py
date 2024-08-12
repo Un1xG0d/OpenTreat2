@@ -16,7 +16,7 @@ servo_pin = 17
 pi = pigpio.pi()
 pi.set_mode(servo_pin, pigpio.OUTPUT)
 
-def gen(camera):
+def generate(camera):
 	while True:
 		frame = camera.get_frame()
 		yield (b"--frame\r\n"
@@ -30,7 +30,7 @@ def index():
 @app.route("/video_feed")
 @basic_auth.required
 def video_feed():
-	return Response(gen(video_stream), mimetype="multipart/x-mixed-replace; boundary=frame")
+	return Response(generate(video_stream), mimetype="multipart/x-mixed-replace; boundary=frame")
 
 @app.route("/drop_treat")
 @basic_auth.required
