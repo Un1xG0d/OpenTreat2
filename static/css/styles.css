@@ -47,3 +47,9 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+@media (orientation: landscape) {
+	.video_feed {
+		width: 100%;
+	}
+}
