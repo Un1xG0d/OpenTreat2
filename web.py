@@ -23,9 +23,9 @@ def generate(camera):
 			   b"Content-Type: image/jpeg\r\n\r\n" + frame + b"\r\n\r\n")
 
 @app.after_request
-def add_header(r):
-	r.headers["Cache-Control"] = "no-store, max-age=0"
-	return r
+def add_header(response):
+	response.headers["Cache-Control"] = "no-store, max-age=0"
+	return response
 
 @app.route("/")
 @basic_auth.required
