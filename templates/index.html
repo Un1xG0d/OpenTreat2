@@ -18,6 +18,10 @@
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
 
+      var http = new XMLHttpRequest();
+      http.open("GET", "/video_feed", true);
+      http.send();
+
       function drop_treat() {
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", "/drop_treat", true);
