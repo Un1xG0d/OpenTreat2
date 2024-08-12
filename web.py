@@ -40,7 +40,6 @@ def drop_treat():
 	pi.set_servo_pulsewidth(servo_pin, 1560) #spin
 	time.sleep(0.25)
 	pi.set_servo_pulsewidth(servo_pin, 1500) #stop
-	return redirect("/")
 
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", port="3000")

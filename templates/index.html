@@ -10,11 +10,14 @@
     <img class="video_feed" src="{{ url_for('video_feed') }}">
     <div class="treat_button_container">
       <center>
-        <a href="/drop_treat">
-          <button class="treat_button">DROP TREAT</button>
-        </a>
+        <button class="treat_button" onclick="drop_treat()">DROP TREAT</button>
       </center>
       </a>
     </div>
+    <script src="javascript">
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "/drop_treat", true);
+      xhttp.send();
+    </script>
   </body>
 </html>
