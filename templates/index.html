@@ -15,6 +15,9 @@
       </a>
     </div>
     <script>
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+
       function drop_treat() {
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", "/drop_treat", true);
