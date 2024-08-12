@@ -4,14 +4,13 @@ import time
 from dotenv import load_dotenv
 from flask import Flask, redirect, render_template, Response
 from flask_basicauth import BasicAuth
-from webcam import VideoCamera
+from webcam import Camera
 
 load_dotenv()
 app = Flask(__name__)
 app.config["BASIC_AUTH_USERNAME"] = os.getenv("USERNAME")
 app.config["BASIC_AUTH_PASSWORD"] = os.getenv("PASSWORD")
 basic_auth = BasicAuth(app)
-video_stream = VideoCamera()
 servo_pin = 17
 pi = pigpio.pi()
 pi.set_mode(servo_pin, pigpio.OUTPUT)
@@ -30,17 +29,17 @@ def index():
 @app.route("/video_feed")
 @basic_auth.required
 def video_feed():
-	return Response(generate(video_stream), mimetype="multipart/x-mixed-replace; boundary=frame")
+	return Response(generate(Camera()), mimetype="multipart/x-mixed-replace; boundary=frame")
 
 @app.route("/drop_treat")
 @basic_auth.required
 def drop_treat():
-	pi.set_servo_pulsewidth(servo_pin, 1500) #stop
+	pi.set_servo_pulsewidth(servo_pin, 1500) # stop servo
 	time.sleep(0.5)
-	pi.set_servo_pulsewidth(servo_pin, 1560) #spin
+	pi.set_servo_pulsewidth(servo_pin, 1560) # spin servo
 	time.sleep(0.5)
-	pi.set_servo_pulsewidth(servo_pin, 1500) #stop
+	pi.set_servo_pulsewidth(servo_pin, 1500) # stop servo
 	return "DROPPED TREAT"
 
 if __name__ == "__main__":
-	app.run(host="0.0.0.0", port="3000")
+	app.run(host="0.0.0.0", port="3000", threaded=True)
