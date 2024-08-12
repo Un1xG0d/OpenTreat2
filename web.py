@@ -45,7 +45,7 @@ def drop_treat():
 @app.route("/restart_app")
 @basic_auth.required
 def restart_app():
-	os.system("kill -9 " + os.getpid() + " && python3 web.py")
+	os.system("kill -9 " + str(os.getpid()) + " && python3 web.py")
 	return "RESTARTED WEB APP"
 
 if __name__ == "__main__":
