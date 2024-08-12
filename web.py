@@ -6,21 +6,22 @@ from flask import Flask, redirect, render_template, Response
 from flask_basicauth import BasicAuth
 from webcam import VideoCamera
 
+def gen(camera):
+	while True:
+		frame = camera.get_frame()
+		yield (b"--frame\r\n"
+			   b"Content-Type: image/jpeg\r\n\r\n" + frame + b"\r\n\r\n")
+
 load_dotenv()
 app = Flask(__name__)
 app.config["BASIC_AUTH_USERNAME"] = os.getenv("USERNAME")
 app.config["BASIC_AUTH_PASSWORD"] = os.getenv("PASSWORD")
 basic_auth = BasicAuth(app)
 video_stream = VideoCamera()
+video_feed = gen(video_stream)
 servo_pin = 17
 pi = pigpio.pi()
 pi.set_mode(servo_pin, pigpio.OUTPUT)
-
-def gen(camera):
-	while True:
-		frame = camera.get_frame()
-		yield (b"--frame\r\n"
-			   b"Content-Type: image/jpeg\r\n\r\n" + frame + b"\r\n\r\n")
 
 @app.route("/")
 @basic_auth.required
@@ -30,7 +31,7 @@ def index():
 @app.route("/video_feed")
 @basic_auth.required
 def video_feed():
-	return Response(gen(video_stream), mimetype="multipart/x-mixed-replace; boundary=frame")
+	return Response(video_feed, mimetype="multipart/x-mixed-replace; boundary=frame")
 
 @app.route("/drop_treat")
 @basic_auth.required
