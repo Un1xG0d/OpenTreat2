@@ -4,7 +4,7 @@ import time
 from dotenv import load_dotenv
 from flask import Flask, redirect, render_template, Response
 from flask_basicauth import BasicAuth
-from webcam import Camera
+from webcam import WebCam
 
 load_dotenv()
 app = Flask(__name__)
@@ -29,7 +29,7 @@ def index():
 @app.route("/video_feed")
 @basic_auth.required
 def video_feed():
-	return Response(generate(Camera()), mimetype="multipart/x-mixed-replace; boundary=frame")
+	return Response(generate(WebCam()), mimetype="multipart/x-mixed-replace; boundary=frame")
 
 @app.route("/drop_treat")
 @basic_auth.required

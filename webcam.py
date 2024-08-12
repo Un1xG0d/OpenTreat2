@@ -97,19 +97,19 @@ class BaseCamera(object):
 				break
 		BaseCamera.thread = None
 
-class Camera(BaseCamera):
+class WebCam(BaseCamera):
 	video_source = 0
 
 	def __init__(self):
-		super(Camera, self).__init__()
+		super(WebCam, self).__init__()
 
 	@staticmethod
 	def set_video_source(source):
-		Camera.video_source = source
+		WebCam.video_source = source
 
 	@staticmethod
 	def frames():
-		camera = cv2.VideoCapture(Camera.video_source)
+		camera = cv2.VideoCapture(WebCam.video_source)
 		if not camera.isOpened():
 			raise RuntimeError("Could not start camera.")
 
