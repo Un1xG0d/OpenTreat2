@@ -38,7 +38,7 @@ def drop_treat():
 	pi.set_servo_pulsewidth(servo_pin, 1500) #stop
 	time.sleep(0.5)
 	pi.set_servo_pulsewidth(servo_pin, 1560) #spin
-	time.sleep(0.25)
+	time.sleep(0.5)
 	pi.set_servo_pulsewidth(servo_pin, 1500) #stop
 	return "DROPPED TREAT"
 
