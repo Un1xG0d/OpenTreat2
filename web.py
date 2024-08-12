@@ -42,5 +42,11 @@ def drop_treat():
 	pi.set_servo_pulsewidth(servo_pin, 1500) #stop
 	return "DROPPED TREAT"
 
+@app.route("/restart_app")
+@basic_auth.required
+def restart_app():
+	os.system("kill -9 " + os.getpid() + " && python3 web.py")
+	return "RESTARTED WEB APP"
+
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", port="3000")
