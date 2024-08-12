@@ -8,6 +8,7 @@ from webcam import WebCam
 
 load_dotenv()
 app = Flask(__name__)
+app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 app.config["BASIC_AUTH_USERNAME"] = os.getenv("USERNAME")
 app.config["BASIC_AUTH_PASSWORD"] = os.getenv("PASSWORD")
 basic_auth = BasicAuth(app)
