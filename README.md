@@ -1,12 +1,12 @@
 <h1 align="center">
-  <img src="https://github.com/Un1xG0d/OpenTreat2/blob/master/README/Icon-full.png">
+  <img src="https://github.com/Un1xG0d/OpenTreat/blob/master/README/Icon-full.png">
 </h1>
 
 OpenTreat allows you to view and interact with your pets while not at home. 
 
 Watch a live video stream of your pet from your smartphone or laptop, and remotely dispense treats with the push of a button.
 
-This a complete rewrite of my original OpenTreat project found [here](https://github.com/Un1xG0d/OpenTreat).
+This a complete rewrite of my original OpenTreat project found [here](https://github.com/Un1xG0d/OpenTreat-legacy).
 
 ## Overview
 The treat dispenser system is built using a Raspberry Pi and 3D printed parts. When a user presses the button on the web app, it turns the servo motor for a certain number of seconds. This spins the middle piece and dispenses a section of treats into the bowl below.
@@ -32,7 +32,7 @@ The treat dispenser system is built using a Raspberry Pi and 3D printed parts. W
 
 ## Download the code
 ```
-git clone https://github.com/Un1xG0d/OpenTreat2.git ~/OpenTreat
+git clone https://github.com/Un1xG0d/OpenTreat.git ~/OpenTreat
 cd ~/OpenTreat
 ```
 
