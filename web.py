@@ -8,7 +8,6 @@ from webcam import WebCam
 
 load_dotenv()
 app = Flask(__name__)
-app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 app.config["BASIC_AUTH_USERNAME"] = os.getenv("USERNAME")
 app.config["BASIC_AUTH_PASSWORD"] = os.getenv("PASSWORD")
 basic_auth = BasicAuth(app)
@@ -21,6 +20,11 @@ def generate(camera):
 		frame = camera.get_frame()
 		yield (b"--frame\r\n"
 			   b"Content-Type: image/jpeg\r\n\r\n" + frame + b"\r\n\r\n")
+
+@app.after_request
+def add_header(r):
+	r.headers["Cache-Control"] = "no-store"
+	return r
 
 @app.route("/")
 @basic_auth.required
