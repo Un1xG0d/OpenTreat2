@@ -15,9 +15,11 @@
       </a>
     </div>
     <script src="javascript">
-      var xhttp = new XMLHttpRequest();
-      xhttp.open("GET", "/drop_treat", true);
-      xhttp.send();
+      function drop_treat() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "/drop_treat", true);
+        xhttp.send();
+      }
     </script>
   </body>
 </html>
