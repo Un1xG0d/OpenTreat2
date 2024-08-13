@@ -8,7 +8,6 @@ from webcam import WebCam
 
 load_dotenv()
 app = Flask(__name__)
-app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 app.config["BASIC_AUTH_USERNAME"] = os.getenv("USERNAME")
 app.config["BASIC_AUTH_PASSWORD"] = os.getenv("PASSWORD")
 basic_auth = BasicAuth(app)
@@ -24,7 +23,9 @@ def generate(camera):
 
 @app.after_request
 def add_header(response):
-	response.headers["Cache-Control"] = "no-store, max-age=0"
+	response.headers["Cache-Control"] = "no-store, must-revalidate"
+	response.cache_control.max_age = 0
+	response.cache_control.public = True
 	return response
 
 @app.route("/")
