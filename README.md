@@ -64,7 +64,8 @@ Make sure to change your router settings to allow a port forward of port 3000 to
 
 ## View the video stream
 On your smartphone or laptop, browse to your router's external IP on port 3000 to view the video stream of your pets. 
-Press the bone button to drop treats into your pets' bowl.
+
+Press the button to drop treats into your pets' bowl.
 
 ## Resources
 ### Recommended print settings
