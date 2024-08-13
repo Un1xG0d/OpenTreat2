@@ -2,3 +2,4 @@ Flask
 Flask-BasicAuth
 opencv-python
 pigpio
+python-dotenv
