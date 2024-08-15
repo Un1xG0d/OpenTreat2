@@ -67,7 +67,7 @@ On your smartphone or laptop, browse to your router's external IP on port 3000 t
 
 ## Resources
 ### Recommended print settings
-> Scale: 80%  
+> Scale: 100%  
 > Infill: 10%  
 > Layer Height: 0.2  
 > Speed: Standard  
