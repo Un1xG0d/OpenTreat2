@@ -78,5 +78,6 @@ On your smartphone or laptop, browse to your router's external IP on port 3000 t
 > Black wire - Pin 6 - ground  
 > Orange wire - Pin 11 - GPIO 17  
 
-## Screenshots & proof-of-concept
+## Pictures & screenshots
 ![](README/Mockup-1.png)
+![](README/Assembly-1.png)
