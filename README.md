@@ -13,7 +13,7 @@ The treat dispenser system is built using a Raspberry Pi and 3D printed parts. W
 
 ## Parts needed
 * Raspberry Pi
-* SG90 servo (any 360* servo motor should work)
+* SG90 servo (or any 360* servo motor)
 * USB webcam
 * 3D printer
 
